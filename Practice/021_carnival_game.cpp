@@ -22,3 +22,27 @@ int main(){
 		cout<<*max<<endl;
 	}
 }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+// 	int t;
+// 	cin>>t;
+// 	while(t--){
+// 		int l,a,b;
+// 		cin>>l>>a>>b;if(a==l && a==0) cout<<"0"<<endl;
+// 		if(b%l==0 && a==0) cout<<"0"<<endl;
+// 		else {
+// 			if(b%2==0){
+// 				if(a%2==0){
+// 					if(l%2==0) cout<<l-2<<endl;
+// 					else cout<<l-1<<endl;
+// 				}
+// 				else cout<<l-1<<endl;
+// 			}
+// 			else cout<<l-1<<endl;
+// 		}
+// 	}
+// }
