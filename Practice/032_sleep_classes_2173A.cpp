@@ -8,9 +8,13 @@ int main(){
 		cin>>n>>k;
 		string s; cin>>s;
 
-		int skip=k,cnt=0;
+		int skip=0,cnt=0;
 		for(int i=0; i<n; i++){
-			if(skip==)
+			if(s[i]=='1') {skip=k;}
+			else if(skip==0 && s[i]=='0') {cnt++;}
+			else if(skip>0) {skip--;}
 		}
+
+		cout<<cnt<<endl;
 	}
 }
