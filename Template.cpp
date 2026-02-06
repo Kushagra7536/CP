@@ -91,3 +91,18 @@ bool custom (pair<int,int> p1,pair<int,int> p2){
 	if(p1.second<p2.second) return true;
 	else return false;
 }
+
+
+// to find gcd of a vector
+int gcd(vector<int> v){
+    int result = *min_element(v.begin(),v.end());
+    while (result > 0) {
+    	bool all_divisible=true;
+    	for(auto i:v){
+    		if(i%result!=0) all_divisible=false;
+    	}
+    	if(all_divisible) break;
+    	result--;
+    }
+    return result;
+}
