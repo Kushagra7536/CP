@@ -1,7 +1,4 @@
 
-
-
-
 // to check if given string is substring of another string
 bool check_substring(string x, string s){
 	if(x.length()<s.length()) {return false;}
