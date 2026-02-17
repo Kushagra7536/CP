@@ -5,64 +5,23 @@ int main(){
 	int t; cin>>t;
 	while(t--){
 		int n; cin>>n;
-		vector<pair<int,int>> v;
+		vector<int> isit={0,0,0,0};
+
 		for(int i=0; i<n; i++){
 			int x,y; cin>>x>>y;
-			v.push_back({x,y});
+			if(x>0) isit[0]=1;
+			if(x<0) isit[1]=1;
+			if(y>0) isit[2]=1;
+			if(y<0) isit[3]=1;
 		}
 
-		int temp=0;
-		while(temp<n){
-			if(v[temp].first!=0){
-				break;
-			}
-			temp++;
+		int sum=0;
+		for(auto x:isit){
+			sum+=x;
 		}
 
-		if(temp==n-1) cout<<"YES"<<endl;
-		else{
-			bool x=true;
-			if(v[temp].first>0){
-				for(int i=1; i<n; i++){
-					if(v[i].first<0){
-						x=false; break;
-					}
-				}
-			else{
-				for(int i=1; i<n; i++){
-					if(v[i].first>0){
-						x=false; break;
-					}
-				}
-			}
+		if(sum>3) cout<<"NO"<<endl;
+		else cout<<"YES"<<endl;
 
-			if(x) cout<<"YES"<<endl;
-			else{
-
-				int temp=0;
-				while(temp<n){
-					if(v[temp].second!=0){
-						break;
-					}
-					temp++;
-				}
-				bool y=true;
-				if(v[0].second>0){
-					for(int i=1; i<n; i++){
-						if(v[i].second<0){
-							y=false; break;
-						}
-					}
-				else{
-					for(int i=1; i<n; i++){
-						if(v[i].second>0){
-							y=false; break;
-						}
-					}
-				}
-				if(y) cout<<"YES"<<endl;
-			}
-		}
 	}
-
 }
