@@ -2,39 +2,31 @@
 using namespace std;
 // 00 50 25 75 
 
+int check(string n, string v){
+	int opr=0;
+	int i=v.length()-1;
+	for(int j=n.length()-1; j>=0; j--){
+		if(n[j]==v[i]){
+			i--;
+			if(i<0) break;
+		}
+		else opr++;
+	}
+	if(i>=0) opr=INT_MAX;
+	return opr;
+}
+
 int main(){
 	long long t; cin>>t;
 	while(t--){
-		long long n; cin>>n;
-		string v;
-		while(n>0){
-			string digit=to_string(n%10);
-			v=digit+v;
-			n/=10;
-		}
-		// cout<<v<<endl;
+		string n; cin>>n;
 
-		long long opr=0,i=v.length()-1,j=i-1;
-		char curr=v[i];
-		while(j>=0){
-			if(curr=='5'){
-				if(v[j]=='2' || v[j]=='7') break;
-				else if(v[j]=='5' || v[j]=='0') curr=v[j];
-				j--; opr++;
-			}
-			else if(curr=='0'){
-				if(v[j]=='0' || v[j]=='5') break;
-				else if(v[j]=='2' || v[j]=='7') curr=v[j];
-				j--; opr++;
-			}
-			else{
-				curr=v[j];
-				j--; opr++;
-			} 
+		int ans=INT_MAX;
+		vector<string> possible_value={"00","25","50","75"};
+		for(int i=0; i<4; i++){
+			ans=min(ans,check(n,possible_value[i]));
 		}
-		
-		cout<<opr<<endl;
 
-	
+		cout<<ans<<endl;
 	}	
 }
