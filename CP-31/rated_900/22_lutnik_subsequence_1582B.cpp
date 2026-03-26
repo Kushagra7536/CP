@@ -2,9 +2,6 @@
 using namespace std;
 # define ll long long 
 
-int factorial(int n) {
-    return (n <= 1) ? 1 : n * factorial(n - 1);
-}
 
 int main(){
 	ll t; cin>>t;
@@ -24,11 +21,9 @@ int main(){
 		else{
 			if(cnt0==0) cout<<cnt1<<endl;
 			else{
-				ll ans = cnt1*(factorial(cnt0));
+				ll ans = cnt1*pow(2,cnt0);
 				cout<<ans<<endl;
 			}
 		}
-
-
 	}
 }

@@ -7,7 +7,7 @@ int main(){
 		string s; cin>>s;
 		long long n = s.length();
 
-		if(n>=10){
+		if(n>10){
 			cout<<s[0]<<n-2<<s[n-1]<<endl;
 		}
 		else cout<<s<<endl;
